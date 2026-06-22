@@ -1,0 +1,11 @@
+frame_000227:
+left_vel=+0.00611769
+right_vel=-0.000454509
+direction=RIGHT
+infer_ms=18442.2
+
+frame_000000:
+left_vel=-0.0015857
+right_vel=+0.0072386
+direction=LEFT
+infer_ms=18657.4

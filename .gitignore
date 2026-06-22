@@ -4,3 +4,11 @@ checkpoints/
 proj57_database&model/
 output/
 .ipynb_checkpoints/
+
+# generated files
+build/
+output/
+*.onnx
+*.pt
+*.parquet
+*.bin
