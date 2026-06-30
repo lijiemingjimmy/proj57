@@ -1,0 +1,18 @@
+$ ls -l /dev/dri/by-path | grep -i npu
+lrwxrwxrwx 1 root root  8 Jun 24 12:44 platform-fdab0000.npu-card -> ../card1
+lrwxrwxrwx 1 root root 13 Jun 24 12:44 platform-fdab0000.npu-render -> ../renderD129
+
+$ ls -l /usr/lib/librknnrt.so
+-rw-r--r-- 1 root root 5241256 Jun 24 06:19 /usr/lib/librknnrt.so
+
+$ ls /usr/local/include/rknn
+rknn_api.h
+rknn_matmul_api.h
+
+$ dmesg | grep -i rknpu | tail -n 6
+[34530.470582] RKNPU: invalid rknpu task number!
+[34530.470614] RKNPU: invalid rknpu task number!
+[34530.470636] RKNPU: invalid rknpu task number!
+[34530.470867] RKNPU: invalid rknpu task number!
+[34530.471180] RKNPU: invalid rknpu task number!
+[34530.471593] RKNPU: invalid rknpu task number!

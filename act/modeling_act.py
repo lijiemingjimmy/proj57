@@ -130,13 +130,10 @@ class RGBEncoder(nn.Module):
         self.hidden_dim = hidden_dim
         self.feature_dim = 512
 
-        from torchvision.models import resnet18, ResNet18_Weights
-        try:
-            weights = ResNet18_Weights.DEFAULT
-            resnet = resnet18(weights=weights)
-        except Exception as exc:
-            logger.warning("Failed to load pretrained ResNet18 weights, falling back to random init: %s", exc)
-            resnet = resnet18(weights=None)
+        from torchvision.models import resnet18
+        # Deployment/export loads the full trained checkpoint immediately after
+        # construction, so avoid a network download for torchvision weights.
+        resnet = resnet18(weights=None)
 
         # 保留卷积特征图，避免全局池化后丢失空间信息。
         self.backbone = nn.Sequential(*list(resnet.children())[:-2])

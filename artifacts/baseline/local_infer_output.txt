@@ -1,0 +1,2 @@
+frame_000000: left=-0.001586, right=+0.007239, grip=-0.000000, direction=LEFT, avg_ms=26.778
+frame_000227: left=+0.006118, right=-0.000454, grip=-0.000000, direction=RIGHT, avg_ms=25.909

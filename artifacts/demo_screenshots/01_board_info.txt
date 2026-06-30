@@ -1,0 +1,16 @@
+$ hostname
+ubuntu
+
+$ cat /proc/device-tree/model
+Orange Pi 5 Plus
+
+$ uname -a
+Linux ubuntu 5.10.0-1012-rockchip #12-Ubuntu SMP Wed Aug 14 22:22:22 UTC 2024 aarch64 aarch64 aarch64 GNU/Linux
+
+$ grep PRETTY_NAME /etc/os-release
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       198Mi       2.4Gi       2.0Mi       1.3Gi       3.6Gi
+Swap:             0B          0B          0B

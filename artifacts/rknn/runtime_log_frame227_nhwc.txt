@@ -1,0 +1,57 @@
+E RKNN: [13:33:01.451] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.452] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.452] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.452] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.452] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.454] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.454] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.454] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.454] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.456] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.456] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.456] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.456] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.458] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.458] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.458] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.459] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.461] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.461] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.461] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.461] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.461] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.461] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.461] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.462] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.462] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.462] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.462] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.462] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.463] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.463] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.463] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.464] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.464] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.464] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.464] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.465] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.465] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.466] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.466] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.466] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.466] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.466] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+E RKNN: [13:33:01.467] failed to submit!, invalid run task counter: 0 >= 0, please try updating to the latest version of the toolkit2 and runtime from: https://eyun.baidu.com/s/3eTDMk6Y (PWD: rknn)
+model_bytes=101709294
+image_bytes=602112 state_bytes=8 latent_bytes=128
+api_version=1.5.2 (c6b7b351a@2023-08-23T15:28:22)
+drv_version=0.9.6
+n_input=3 n_output=1
+input[0] name=image dims=1x224x224x3 elems=150528 size=301056 fmt=NHWC type=FP16 qnt=AFFINE
+input[1] name=state dims=1x2 elems=2 size=4 fmt=UNDEFINED type=FP16 qnt=AFFINE
+input[2] name=latent dims=1x32 elems=32 size=64 fmt=UNDEFINED type=FP16 qnt=AFFINE
+output[0] name=action dims=1x8x3 elems=24 size=48 fmt=UNDEFINED type=FP16 qnt=AFFINE
+rknn_perf_run_us=25340
+wall_ms=25.364
+output[0] raw_first_values=-0.292480,-1.004883,-1.017578,-0.135132,-1.207031,-1.018555,-0.093079,-1.303711,-1.017578,-0.082886,-1.327148,-1.020508,-0.029510,-1.282227,-1.018555,-0.038452,-1.249023,-1.013672,0.063293,-0.919922,-1.020508,0.170288,-0.449951,-1.023438
+first_step_denorm_left=0.006128 right=-0.000488 grip=0.000000 direction=RIGHT

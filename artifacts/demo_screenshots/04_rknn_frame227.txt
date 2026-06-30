@@ -1,0 +1,6 @@
+$ cd /home/ubuntu/proj57_rknn_run && grep key lines runtime_log_frame227_nhwc.txt
+api_version=1.5.2 (c6b7b351a@2023-08-23T15:28:22)
+drv_version=0.9.6
+rknn_perf_run_us=25340
+wall_ms=25.364
+first_step_denorm_left=0.006128 right=-0.000488 grip=0.000000 direction=RIGHT

@@ -87,6 +87,7 @@ class ACTONNXWrapper(nn.Module):
 def main():
     ckpt_path = ROOT / "output/train/model.pt"
     out_path = ROOT / "build/act.onnx"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
     if not ckpt_path.exists():
         raise FileNotFoundError(f"模型不存在: {ckpt_path}")

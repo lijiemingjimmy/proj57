@@ -1,0 +1,123 @@
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+
+\title{Proj57 零基础前置知识}
+\author{Proj57 初审材料}
+\date{2026-06-30}
+
+\begin{document}
+\maketitle
+
+\section{这个项目到底在做什么}
+
+Proj57 的完整题目是“面向具身智能的国产操作系统 ACT 模型适配与实时推理优化”。可以先把它理解成：把一个机器人动作预测模型，搬到国产操作系统和嵌入式开发板上运行，并证明它能正确输出动作。
+
+ACT 是 Action Chunking Transformer 的缩写。它读取相机图像和机器人当前状态，输出未来一小段时间的动作序列。本项目里，模型输入包括：
+
+\begin{itemize}
+  \item 一张前视图像，形状是 $1 \times 3 \times 224 \times 224$。
+  \item 当前状态，形状是 $1 \times 2$。
+  \item latent 输入，形状是 $1 \times 32$。
+\end{itemize}
+
+模型输出是 $1 \times 8 \times 3$ 的动作序列。每一步可以理解为：
+
+\begin{verbatim}
+left_vel, right_vel, gripper_target
+\end{verbatim}
+
+当前评测样例主要看左右方向是否正确。例如输出的左轮速度小于右轮速度时，可解释为向 LEFT；反之可解释为向 RIGHT。
+
+\section{比赛任务和奖项路径}
+
+赛题有三个任务：
+
+\begin{itemize}
+  \item 任务一：在荔枝派 SG2002（256 MB 内存）上跑通 ACT 推理。这是最高难度，因为内存非常小。
+  \item 任务二：在香橙派 RK3588（约 4 GB 内存）上跑通 ACT 推理。这是当前最适合冲刺的硬件路线。
+  \item 任务三：在 QEMU 中跑通 ACT 模型推理。这是基础保底，最容易复现。
+\end{itemize}
+
+奖项路径可以简化理解为：
+
+\begin{itemize}
+  \item 完成任务三：基础达标。
+  \item 完成任务三和任务二：进阶能力。
+  \item 完成任务一：高难挑战。
+  \item 同时完成任务一和任务二，并且工程实现较好：综合优秀。
+\end{itemize}
+
+所以当前策略是：先保住任务三的 QEMU/ONNX 结果，再冲任务二的 RK3588/RKNN/NPU。
+
+\section{你手里的板子是什么}
+
+从照片和实际 SSH 探测结果看，你手里的是 Orange Pi 5 Plus，芯片平台是 Rockchip RK3588。它可以理解成一个小型电脑主机：
+
+\begin{itemize}
+  \item 有 CPU、内存、存储和操作系统。
+  \item 可以接显示器、键盘、鼠标。
+  \item 可以通过网络 SSH 登录。
+  \item RK3588 带 NPU，可以用来加速 AI 模型推理。
+\end{itemize}
+
+照片里像 U 盘一样的小板通常是 USB 转 TTL 串口模块，旁边一排彩色杜邦线是串口线。它的作用是看启动日志或在网络不可用时登录串口。明天如果有显示器和键盘，可以先不使用串口模块。
+
+\section{是不是必须有显示器}
+
+不是绝对必须，但对零基础调试很有帮助。
+
+已经确认板子可以通过 SSH 登录，IP 是：
+
+\begin{verbatim}
+192.168.0.104
+\end{verbatim}
+
+这说明板子已经启动过，并且在网络上可访问。如果明天有显示器和键盘，可以直接看到系统桌面或终端，确认电源、系统和网络状态。如果没有显示器，也可以继续用 SSH 操作，但前提是笔记本和板子在同一个网络里。
+
+\section{笔记本没有网线口怎么办}
+
+没有网线口不是致命问题。可选方案有三种：
+
+\begin{itemize}
+  \item 用同一个 Wi-Fi 或局域网，让笔记本 SSH 到板子。
+  \item 用 USB 转网口接笔记本，再用网线连接板子或路由器。
+  \item 用显示器和键盘在板子本机操作，然后配置 Wi-Fi。
+\end{itemize}
+
+当前已经通过 SSH 连到板子，所以短期内不需要立刻购买网口转换头。明天带显示器和键盘主要是为了降低不确定性。
+
+\section{当前已经完成了什么}
+
+截至 2026-06-30，已经完成：
+
+\begin{itemize}
+  \item 成功 SSH 登录 Orange Pi。
+  \item 确认板型为 Orange Pi 5 Plus。
+  \item 确认系统为 Ubuntu 22.04.5 LTS，架构为 aarch64。
+  \item 确认 NPU 驱动节点、RKNN runtime 库和 RKNN 头文件存在。
+  \item 下载 ACT 模型权重和两个代表性测试帧。
+  \item 修复并导出 ONNX 模型。
+  \item 在本机 ONNX Runtime 上跑通 LEFT/RIGHT 正确性验证。
+  \item 记录本地 CPU benchmark，约 26 ms 每次推理。
+  \item 新增 RKNN 转换脚本。
+  \item 完成 ONNX 到 RKNN 转换。
+  \item 在 Orange Pi RK3588 上用 C++ RKNN runtime 跑通两个样例。
+\end{itemize}
+
+当前任务二的最小闭环已经跑通：\verb|frame_000000| 输出 LEFT，\verb|frame_000227| 输出 RIGHT，板端单次推理大约 25--35 ms。仍需要完善的是 runtime 版本对齐、更多样例测试，以及把 C++ runtime 扩展成直接读取 JPEG 的完整工具。
+
+\section{最重要的理解}
+
+你现在不需要先理解所有操作系统、深度学习和硬件细节。先记住三句话：
+
+\begin{itemize}
+  \item 板子就是一台小电脑，能接屏幕键盘，也能远程 SSH。
+  \item 模型已经在 ONNX Runtime 和 RKNN runtime 上跑通，说明基础推理链路成立。
+  \item 下一步核心是把已有结果工程化：消除版本警告、扩展输入处理、增加稳定性测试。
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,186 @@
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+
+\title{Proj57 明日操作手册}
+\author{Proj57 初审材料}
+\date{2026-06-30}
+
+\begin{document}
+\maketitle
+
+\section{明天先准备什么}
+
+建议准备：
+
+\begin{itemize}
+  \item Orange Pi 5 Plus 开发板。
+  \item 稳定电源。
+  \item HDMI 线和显示器。
+  \item USB 键盘，最好再带鼠标。
+  \item 笔记本电脑。
+  \item 如果有，带一个 USB 转网口，但不是必须。
+  \item 不要拔掉或重置板上的存储卡。
+\end{itemize}
+
+如果显示器能亮并进入系统，说明板子本身启动正常。若显示器无输出，再考虑使用 USB-TTL 串口模块看启动日志。
+
+\section{第一步：确认板子是否启动}
+
+接好电源、显示器、键盘后，看屏幕是否出现 Ubuntu、登录界面或终端。
+
+如果能进入系统，打开终端执行：
+
+\begin{verbatim}
+uname -a
+cat /etc/os-release
+cat /proc/device-tree/model
+free -h
+df -h
+\end{verbatim}
+
+预期信息大致是：
+
+\begin{verbatim}
+Board: Orange Pi 5 Plus
+OS: Ubuntu 22.04.5 LTS
+Arch: aarch64
+Memory: about 3.8 GiB
+\end{verbatim}
+
+\section{第二步：确认网络}
+
+在板子终端执行：
+
+\begin{verbatim}
+ip addr
+hostname -I
+\end{verbatim}
+
+如果看到类似下面的地址，说明板子在局域网里：
+
+\begin{verbatim}
+192.168.0.104
+\end{verbatim}
+
+然后在 Windows 笔记本 PowerShell 里执行：
+
+\begin{verbatim}
+ssh ubuntu@192.168.0.104
+\end{verbatim}
+
+如果 IP 变了，就把命令里的 IP 换成板子实际显示的 IP。
+
+\section{第三步：确认 NPU 和 RKNN runtime}
+
+在板子终端或 SSH 里执行：
+
+\begin{verbatim}
+ls -l /dev/dri/by-path | grep npu
+ls -l /usr/lib/librknnrt.so
+ls -l /usr/local/include/rknn
+dmesg | grep -i rknpu | tail
+\end{verbatim}
+
+如果能看到 NPU 节点、\verb|librknnrt.so| 和 \verb|rknn_api.h|，说明板端 NPU runtime 基础条件存在。
+
+\section{第四步：查看已经同步到板子的材料}
+
+当前文档和小日志已经同步到：
+
+\begin{verbatim}
+/home/ubuntu/proj57_initial_review
+\end{verbatim}
+
+在板子上执行：
+
+\begin{verbatim}
+cd /home/ubuntu/proj57_initial_review
+find . -maxdepth 3 -type f | sort
+cat docs/initial_review/technical_doc.md
+cat docs/initial_review/rknn_result.md
+\end{verbatim}
+
+这里面有初审技术文档、比赛背景、板端信息、NPU 探测结果、ONNX 正确性结果、性能表和演示脚本。
+
+\section{第五步：本机继续跑模型验证}
+
+在 Windows 的队伍仓库目录：
+
+\begin{verbatim}
+C:\Users\Laptop\Pictures\main\team-proj57
+\end{verbatim}
+
+使用本机 Python 环境可以执行：
+
+\begin{verbatim}
+..\.venv-ssh\Scripts\python.exe tools\check_onnx.py
+\end{verbatim}
+
+当前已经验证过的关键结果是：
+
+\begin{verbatim}
+frame_000000.jpg -> LEFT   expected: LEFT
+frame_000227.jpg -> RIGHT  expected: RIGHT
+\end{verbatim}
+
+本机 ONNX Runtime CPU benchmark 约为：
+
+\begin{verbatim}
+frame_000000: 26.78 ms
+frame_000227: 25.91 ms
+\end{verbatim}
+
+\section{第六步：RKNN 转换路线}
+
+当前 Windows Python 不能直接安装 \verb|rknn-toolkit2|，所以不能直接在 Windows 环境完成 ONNX 到 RKNN 转换。正确路线是使用 x86\_64 Linux 环境，例如 WSL 或原生 Linux。
+
+推荐命令如下：
+
+\begin{verbatim}
+cd /mnt/c/Users/Laptop/Pictures/main/team-proj57
+python3 -m venv ~/.venvs/proj57-rknn
+source ~/.venvs/proj57-rknn/bin/activate
+python -m pip install -U pip
+python -m pip install rknn-toolkit2==2.3.2
+python -c "from rknn.api import RKNN; print('RKNN OK')"
+python tools/convert_act_rknn.py
+\end{verbatim}
+
+当前已经成功生成：
+
+\begin{verbatim}
+build/act_rk3588_fp.rknn
+\end{verbatim}
+
+如果后续重转模型或更换量化策略失败，要保留完整日志，因为 ACT Transformer 结构仍可能遇到 RKNN 算子支持或内存问题。
+
+\section{第七步：录制初审视频}
+
+视频建议按这个顺序录：
+
+\begin{enumerate}
+  \item 展示比赛目标：ACT 模型适配 StarryOS、QEMU 和 RK3588。
+  \item 展示 Orange Pi 5 Plus 实物和系统信息。
+  \item 展示 NPU 节点、RKNN runtime 和内核日志。
+  \item 展示任务三/QEMU/ONNX 的 LEFT/RIGHT 正确结果。
+  \item 展示本地 ONNX benchmark。
+  \item 展示 RKNN 转换和板端 runtime 已跑通的证据，以及下一步计划。
+\end{enumerate}
+
+重点不是把所有命令都讲复杂，而是让评委看懂：已经完成了模型链路验证、板端环境确认、RKNN/NPU 最小闭环和性能记录。
+
+\section{遇到问题时先看这里}
+
+\begin{itemize}
+  \item 显示器没画面：先检查电源、HDMI 输入源、线缆，再考虑串口。
+  \item SSH 不通：先在板子上用 \verb|hostname -I| 看 IP 是否变化。
+  \item 没有网线口：优先用同一 Wi-Fi 或显示器键盘本机操作。
+  \item RKNN 装不上：不要在 Windows Python 上硬装，切到 Linux/WSL。
+  \item 不确定能否提交：先提交当前技术文档、ONNX 结果、RKNN 转换结果、板端 runtime 日志、性能表和演示视频；后续再冲刺 runtime 版本对齐和工程化。
+\end{itemize}
+
+\end{document}

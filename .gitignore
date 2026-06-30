@@ -12,3 +12,16 @@ output/
 *.pt
 *.parquet
 *.bin
+
+# local dependency/cache artifacts
+*.whl
+*.whl.parts/
+
+# document editor locks and LaTeX intermediates
+~$*
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
